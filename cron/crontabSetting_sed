@@ -1,0 +1,12 @@
+#before use this file, change file permission
+#$chmod 600 cron/crontabSetting
+
+####################################
+# management automation
+####################################
+
+## monitor Terminal API server, every 1 min
+*/01 * * * * APP_LOCATION/scripts/processManager.sh -a monitoringTerminalAPI >> /var/log/automation.log
+
+## monitor Subgraph API, every 1 min
+*/01 * * * * APP_LOCATION/scripts/processManager.sh -a monitoringSubgraph >> /var/log/automation.log
